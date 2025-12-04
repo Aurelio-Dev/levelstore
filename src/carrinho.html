@@ -129,7 +129,7 @@
       </p>
 
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        <section class="lg:col-span-2">
+        <div class="lg:col-span-2">
           <h2
             class="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-200"
           >
@@ -254,45 +254,47 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <aside
-          class="p-6 transition-colors duration-200 border bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700 h-fit"
-        >
+        <div>
           <h2
             class="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-200"
           >
             Resumo
           </h2>
           <div
-            class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
+            class="p-6 transition-colors duration-200 border bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700"
           >
-            <span>Itens no carrinho</span>
-            <span class="text-slate-900 dark:text-slate-100">$149.00</span>
+            <div
+              class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
+            >
+              <span>Itens no carrinho</span>
+              <span class="text-slate-900 dark:text-slate-100">$149.00</span>
+            </div>
+            <div
+              class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
+            >
+              <span>Descontos</span>
+              <span class="text-green-500 dark:text-green-400">- $25.00</span>
+            </div>
+            <div
+              class="flex justify-between pt-3 mb-4 text-base font-bold border-t border-slate-300 dark:border-slate-700"
+            >
+              <span class="text-slate-900 dark:text-slate-100">Total</span>
+              <span class="text-sky-500 dark:text-sky-400">$124.00</span>
+            </div>
+            <button
+              class="w-full py-3 mb-3 font-bold text-white transition rounded-md bg-sky-500 hover:bg-sky-600"
+            >
+              FINALIZAR COMPRA
+            </button>
+            <button
+              class="w-full py-2 text-sm transition bg-white border rounded-md dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              CUPOM DE DESCONTO / GIFT CARD
+            </button>
           </div>
-          <div
-            class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
-          >
-            <span>Descontos</span>
-            <span class="text-green-500 dark:text-green-400">- $25.00</span>
-          </div>
-          <div
-            class="flex justify-between pt-3 mb-4 text-base font-bold border-t border-slate-300 dark:border-slate-700"
-          >
-            <span class="text-slate-900 dark:text-slate-100">Total</span>
-            <span class="text-sky-500 dark:text-sky-400">$124.00</span>
-          </div>
-          <button
-            class="w-full py-3 mb-3 font-bold text-white transition rounded-md bg-sky-500 hover:bg-sky-600"
-          >
-            FINALIZAR COMPRA
-          </button>
-          <button
-            class="w-full py-2 text-sm transition bg-white border rounded-md dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"
-          >
-            CUPOM DE DESCONTO / GIFT CARD
-          </button>
-        </aside>
+        </div>
       </div>
 
       <section class="mt-12">
@@ -324,7 +326,7 @@
                 d="M5 11V7a7 7 0 0114 0v4"
               />
             </svg>
-            <span class="text-sm text-slate-900 dark:text-slate-200"
+            <span class="text-sm text-slate-900 text-slate-200"
               >Devolução grátis por 30 dias</span
             >
           </li>
@@ -376,7 +378,7 @@
                 d="M8 21V7"
               />
             </svg>
-            <span class="text-sm text-slate-900 dark:text-slate-200"
+            <span class="text-sm text-slate-900 text-slate-200"
               >Entrega em casa ou retirada</span
             >
           </li>
@@ -471,5 +473,3 @@
     </footer>
   </body>
 </html>
-
-
