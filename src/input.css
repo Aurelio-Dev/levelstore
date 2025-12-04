@@ -1,0 +1,46 @@
+/* 1) Importa a fonte do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&display=swap");
+
+/* 2) Importa o Tailwind */
+@import "tailwindcss";
+@import "./styles.css";
+
+/* 3) Suas utilitárias customizadas */
+@layer utilities {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out both;
+  }
+
+  .animate-fade-out {
+    animation: fadeOut 0.2s ease-in both;
+  }
+
+  /* Fonte especial para títulos tipo Black Friday */
+  .font-promo {
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+}

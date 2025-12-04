@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <script src="darkmode.js"></script>
+    <title>Carrinho de Compras - Level</title>
+  </head>
+  <body
+    class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-['Montserrat'] transition-colors duration-200"
+  >
+    <header
+      class="sticky top-0 z-50 transition-colors duration-200 border-b bg-slate-100/95 dark:bg-slate-800/95 border-slate-300 dark:border-slate-700 backdrop-blur"
+    >
+      <div
+        class="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl"
+      >
+        <a href="index.html" class="inline-flex items-center">
+          <img
+            src="assets/images/logo1.png"
+            alt="Level Logo"
+            class="object-contain w-auto h-24 transition-all duration-200 md:h-20 invert dark:invert-0"
+          />
+        </a>
+
+        <nav>
+          <ul
+            class="flex items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-200"
+          >
+            <li>
+              <button
+                id="theme-toggle"
+                type="button"
+                aria-label="Alternar tema"
+                class="p-2 transition-colors rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700"
+              >
+                <svg
+                  id="sun-icon"
+                  class="w-5 h-5 text-slate-700 dark:text-slate-200"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <svg
+                  id="moon-icon"
+                  class="hidden w-5 h-5 text-slate-700 dark:text-slate-200"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-1 transition hover:text-sky-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <circle cx="12" cy="12" r="10" stroke-width="2" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 16v-4m0-4h.01"
+                  />
+                </svg>
+                Suporte
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main
+      class="max-w-6xl px-4 py-10 mx-auto transition-colors duration-200 sm:px-6 lg:px-8"
+    >
+      <a
+        href="index.html"
+        class="flex items-center mb-6 text-sm transition-colors text-sky-500 dark:text-sky-400 hover:underline"
+      >
+        <svg
+          class="w-4 h-4 mr-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Voltar para a loja
+      </a>
+
+      <h1
+        class="mb-2 text-3xl font-bold text-center text-slate-900 dark:text-slate-100"
+      >
+        Carrinho de Compras
+      </h1>
+      <p class="mb-10 text-sm text-center text-slate-600 dark:text-slate-400">
+        Frete e descontos são aplicados no checkout.
+      </p>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <section class="lg:col-span-2">
+          <h2
+            class="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-200"
+          >
+            Seu pedido
+          </h2>
+          <div class="space-y-6">
+            <div
+              class="flex flex-col gap-6 p-6 transition-colors duration-200 border bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700 md:flex-row md:items-center"
+            >
+              <img
+                src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
+                alt="Cyberpunk 2077"
+                class="object-cover w-24 h-24 rounded-lg bg-slate-200 dark:bg-slate-700"
+              />
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900 dark:text-slate-100">
+                  Cyberpunk 2077
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  Ação, RPG, Futurista
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Envio: 2-4 semanas</p>
+                <div class="flex items-center gap-4 mt-4">
+                  <div class="flex items-center gap-2">
+                    <label
+                      for="qtd1"
+                      class="text-xs text-slate-600 dark:text-slate-400"
+                      >Qtd:</label
+                    >
+                    <input
+                      id="qtd1"
+                      type="number"
+                      min="1"
+                      value="1"
+                      class="px-2 py-1 text-center bg-white border rounded w-14 dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                    />
+                  </div>
+                  <button
+                    class="ml-auto text-rose-500 dark:text-rose-400 hover:text-rose-600 dark:hover:text-rose-500"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col items-end min-w-[90px]">
+                <span class="text-sm line-through text-slate-500">$95</span>
+                <span class="text-lg font-bold text-sky-500 dark:text-sky-400"
+                  >$70</span
+                >
+                <span class="mt-1 text-xs text-green-500 dark:text-green-400"
+                  >Você economiza 25%</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col gap-6 p-6 transition-colors duration-200 border bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700 md:flex-row md:items-center"
+            >
+              <img
+                src="assets/images/logo-jogos/arc-raiders-weavs.jpg"
+                alt="ARC Raiders"
+                class="object-cover w-24 h-24 rounded-lg bg-slate-200 dark:bg-slate-700"
+              />
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900 dark:text-slate-100">
+                  ARC Raiders
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  Ação, Cooperativo, Sci-fi
+                </p>
+                <p class="mt-1 text-xs text-slate-500">Envio: 6 semanas</p>
+                <div class="flex items-center gap-4 mt-4">
+                  <div class="flex items-center gap-2">
+                    <label
+                      for="qtd2"
+                      class="text-xs text-slate-600 dark:text-slate-400"
+                      >Qtd:</label
+                    >
+                    <input
+                      id="qtd2"
+                      type="number"
+                      min="1"
+                      value="2"
+                      class="px-2 py-1 text-center bg-white border rounded w-14 dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100"
+                    />
+                  </div>
+                  <button
+                    class="ml-auto text-rose-500 dark:text-rose-400 hover:text-rose-600 dark:hover:text-rose-500"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col items-end min-w-[90px]">
+                <span class="text-lg font-bold text-sky-500 dark:text-sky-400"
+                  >$54</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside
+          class="p-6 transition-colors duration-200 border bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700 h-fit"
+        >
+          <h2
+            class="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-200"
+          >
+            Resumo
+          </h2>
+          <div
+            class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
+          >
+            <span>Itens no carrinho</span>
+            <span class="text-slate-900 dark:text-slate-100">$149.00</span>
+          </div>
+          <div
+            class="flex justify-between mb-2 text-sm text-slate-700 dark:text-slate-300"
+          >
+            <span>Descontos</span>
+            <span class="text-green-500 dark:text-green-400">- $25.00</span>
+          </div>
+          <div
+            class="flex justify-between pt-3 mb-4 text-base font-bold border-t border-slate-300 dark:border-slate-700"
+          >
+            <span class="text-slate-900 dark:text-slate-100">Total</span>
+            <span class="text-sky-500 dark:text-sky-400">$124.00</span>
+          </div>
+          <button
+            class="w-full py-3 mb-3 font-bold text-white transition rounded-md bg-sky-500 hover:bg-sky-600"
+          >
+            FINALIZAR COMPRA
+          </button>
+          <button
+            class="w-full py-2 text-sm transition bg-white border rounded-md dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700"
+          >
+            CUPOM DE DESCONTO / GIFT CARD
+          </button>
+        </aside>
+      </div>
+
+      <section class="mt-12">
+        <h2
+          class="mb-4 text-lg font-semibold text-slate-900 dark:text-slate-200"
+        >
+          Compra segura e fácil
+        </h2>
+        <ul
+          class="border divide-y divide-slate-200 dark:divide-slate-700 bg-slate-100 dark:bg-slate-800 rounded-xl border-slate-200 dark:border-slate-700"
+        >
+          <li class="flex items-center gap-4 px-6 py-4">
+            <svg
+              class="w-6 h-6 text-sky-500 dark:text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 7v4a2 2 0 01-2 2H7a2 2 0 01-2-2V7"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 11V7a7 7 0 0114 0v4"
+              />
+            </svg>
+            <span class="text-sm text-slate-900 text-slate-200"
+              >Devolução grátis por 30 dias</span
+            >
+          </li>
+          <li class="flex items-center gap-4 px-6 py-4">
+            <svg
+              class="w-6 h-6 text-sky-500 dark:text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <rect
+                x="2"
+                y="7"
+                width="20"
+                height="13"
+                rx="2"
+                stroke-width="2"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 3v4"
+              />
+            </svg>
+            <span class="text-sm text-slate-900 dark:text-slate-200"
+              >Pagamento facilitado</span
+            >
+          </li>
+          <li class="flex items-center gap-4 px-6 py-4">
+            <svg
+              class="w-6 h-6 text-sky-500 dark:text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <rect
+                x="3"
+                y="7"
+                width="18"
+                height="13"
+                rx="2"
+                stroke-width="2"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 21V7"
+              />
+            </svg>
+            <span class="text-sm text-slate-900 text-slate-200"
+              >Entrega em casa ou retirada</span
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="py-8 transition-colors duration-200 border-t bg-slate-200 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400"
+    >
+      <div class="grid max-w-6xl grid-cols-2 gap-8 px-6 mx-auto md:grid-cols-4">
+        <div>
+          <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-slate-20">
+            Precisa de ajuda?
+          </h3>
+          <button
+            class="px-6 py-2 text-white transition rounded-md bg-slate-600 dark:bg-slate-700 hover:bg-slate-500 dark:hover:bg-slate-600"
+          >
+            Fale Conosco
+          </button>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-slate-200">
+            Suporte ao Cliente
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="transition hover:text-sky-400"
+                >Garantia e Devoluções</a
+              >
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Pagamentos</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Envio</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400"
+                >Termos de Serviço</a
+              >
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400"
+                >Política de Privacidade</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
+            Informações
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Sobre Nós</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Marcas</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Afiliados</a>
+            </li>
+            <li>
+              <a href="#" class="transition hover:text-sky-400">Investidores</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
+            Localização
+          </h3>
+          <div class="flex items-center space-x-2">
+            <img
+              src="https://flagcdn.com/w40/br.png"
+              alt="Brasil"
+              class="w-6 h-6"
+            />
+            <span class="text-sm">Brasil</span>
+          </div>
+          <div class="flex items-center mt-4 space-x-4">
+            <a href="#" class="transition hover:text-sky-400">Instagram</a>
+            <a href="#" class="transition hover:text-sky-400">Facebook</a>
+            <a href="#" class="transition hover:text-sky-400">YouTube</a>
+            <a href="#" class="transition hover:text-sky-400">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

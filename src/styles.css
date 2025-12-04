@@ -1,0 +1,8 @@
+:root {
+  --color-ink-black: #0d1b2a; /* bg principal bem escuro */
+  --color-prussian-blue: #1b263b; /* header / faixas */
+  --color-dusk-blue: #415a77; /* cards / seções */
+  --color-lavender-grey: #778da9; /* textos secundários / bordas */
+  --color-alabaster-grey: #e0e1dd; /* texto principal / fundos claros */
+  --color-steam-accent: #1a9fff; /* acento “Steam”, botões */
+}
