@@ -1,13 +1,11 @@
-// Dark Mode Toggle Script
+
 (function() {
   'use strict';
 
-  // Função para obter o tema atual
   function getTheme() {
     return localStorage.getItem('theme') || 'dark';
   }
 
-  // Função para aplicar o tema
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -17,7 +15,7 @@
     localStorage.setItem('theme', theme);
   }
 
-  // Função para alternar o tema
+ 
   function toggleTheme() {
     const currentTheme = getTheme();
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -25,7 +23,6 @@
     updateToggleButton();
   }
 
-  // Função para atualizar o botão de toggle
   function updateToggleButton() {
     const theme = getTheme();
     const toggleBtn = document.getElementById('theme-toggle');
@@ -45,18 +42,19 @@
     }
   }
 
-  // Aplicar tema ao carregar a página
+
   document.addEventListener('DOMContentLoaded', function() {
     applyTheme(getTheme());
     updateToggleButton();
 
-    // Adicionar event listener ao botão de toggle
+   
     const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
       toggleBtn.addEventListener('click', toggleTheme);
     }
   });
 
-  // Aplicar tema imediatamente para evitar flash
+ 
   applyTheme(getTheme());
 })();
+
